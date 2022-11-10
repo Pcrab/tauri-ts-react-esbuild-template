@@ -1,7 +1,7 @@
 {
   "build": {
-    "beforeDevCommand": "pnpm dev",
-    "beforeBuildCommand": "pnpm build",
+    "beforeDevCommand": "pnpm watch",
+    "beforeBuildCommand": "pnpm compile",
     "devPath": "http://localhost:1420",
     "distDir": "../dist"
   },
