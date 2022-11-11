@@ -7,7 +7,7 @@
   },
   "package": {
     "productName": "pfsv",
-    "version": "0.0.0"
+    "version": "../package.json"
   },
   "tauri": {
     "allowlist": {

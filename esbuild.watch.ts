@@ -2,15 +2,11 @@ import esbuild from "esbuild";
 import config from "./esbuild.js";
 
 esbuild
-    .serve(
-        {
-            servedir: "dist",
-            port: 1420,
-        },
-        {
-            ...config,
-        },
-    )
-    .catch(() => {
+    .build({
+        ...config,
+        watch: true,
+    })
+    .catch((e) => {
+        console.log(e);
         process.exit(1);
     });

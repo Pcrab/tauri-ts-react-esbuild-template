@@ -10,7 +10,9 @@
         "preinstall": "npx only-allow pnpm",
         "prepare": "husky install",
         "tauri": "tauri",
-        "watch": "ts-node --esm esbuild.watch.ts"
+        "watch": "concurrently 'pnpm watch:src' 'pnpm watch:server'",
+        "watch:src": "ts-node --esm esbuild.watch.ts",
+        "watch:server": "http-server ./dist -p 1420 -s"
     },
     "dependencies": {
         "@tauri-apps/api": "^1.2.0",
@@ -20,16 +22,17 @@
     "devDependencies": {
         "@tauri-apps/cli": "^1.2.0",
         "@types/node": "^18.11.9",
-        "@types/nodemon": "^1.19.2",
         "@types/react": "^18.0.25",
         "@types/react-dom": "^18.0.8",
         "@typescript-eslint/eslint-plugin": "^5.42.1",
         "@typescript-eslint/parser": "^5.42.1",
+        "concurrently": "^7.5.0",
         "esbuild": "^0.15.13",
         "eslint": "^8.27.0",
         "eslint-config-prettier": "^8.5.0",
         "eslint-plugin-import": "^2.26.0",
         "eslint-plugin-prettier": "^4.2.1",
+        "http-server": "^14.1.1",
         "husky": "^8.0.2",
         "prettier": "^2.7.1",
         "rimraf": "^3.0.2",

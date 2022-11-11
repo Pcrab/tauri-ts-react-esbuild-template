@@ -5,6 +5,7 @@ esbuild
     .build({
         ...config,
     })
-    .catch(() => {
+    .catch((e) => {
+        console.log(e);
         process.exit(1);
     });
