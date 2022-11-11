@@ -1,4 +1,4 @@
-:root {
+#root {
     font-family: Inter, Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 24px;
@@ -27,10 +27,18 @@
     padding: 1.5em;
     will-change: filter;
     transition: 0.75s;
-}
 
-.logo.tauri:hover {
-    filter: drop-shadow(0 0 2em #24c8db);
+    .tauri:hover {
+        filter: drop-shadow(0 0 2em #24c8db);
+    }
+
+    .vite:hover {
+        filter: drop-shadow(0 0 2em #747bff);
+    }
+
+    .react:hover {
+        filter: drop-shadow(0 0 2em #61dafb);
+    }
 }
 
 .row {
