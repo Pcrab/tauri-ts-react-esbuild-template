@@ -5,6 +5,9 @@ esbuild
     .build({
         ...config,
         watch: true,
+        define: {
+            "process.env.NODE_ENV": "'development'",
+        },
     })
     .catch((e) => {
         console.log(e);
