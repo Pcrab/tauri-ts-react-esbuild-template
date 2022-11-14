@@ -6,10 +6,10 @@
     "scripts": {
         "compile": "ts-node --esm esbuild.compile.ts",
         "check": "tsc --noEmit",
+        "dev": "tauri dev",
         "lint": "eslint src --fix && stylelint 'src/**/*.scss' --fix",
         "preinstall": "npx only-allow pnpm",
         "prepare": "husky install",
-        "tauri": "tauri",
         "watch": "concurrently 'pnpm watch:src' 'pnpm watch:server'",
         "watch:src": "ts-node --esm esbuild.watch.ts",
         "watch:server": "http-server ./dist -p 1420 -s"
@@ -17,7 +17,8 @@
     "dependencies": {
         "@tauri-apps/api": "^1.2.0",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^6.4.3"
     },
     "devDependencies": {
         "@tauri-apps/cli": "^1.2.0",
