@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+/dist/
+!/dist/development/index.html
+!/dist/production/index.html

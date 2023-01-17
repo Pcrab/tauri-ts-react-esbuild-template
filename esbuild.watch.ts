@@ -4,6 +4,7 @@ import config from "./esbuild.js";
 esbuild
     .build({
         ...config,
+        outfile: "./dist/development/bundle.js",
         watch: true,
         define: {
             "process.env.NODE_ENV": "'development'",

@@ -4,15 +4,16 @@
     "version": "0.0.1",
     "type": "module",
     "scripts": {
-        "compile": "ts-node --esm esbuild.compile.ts",
+        "build": "tauri build",
+        "compile": "rimraf dist/production/assets && rimraf dist/production/bundle.js* && ts-node --esm esbuild.compile.ts",
         "check": "tsc --noEmit",
-        "dev": "tauri dev",
+        "dev": "rimraf dist/development/assets && rimraf dist/development/bundle.js* && concurrently 'tauri dev' 'react-devtools'",
         "lint": "eslint src && stylelint 'src/**/*.scss'",
         "preinstall": "npx only-allow pnpm",
         "prepare": "husky install",
         "watch": "concurrently 'pnpm watch:src' 'pnpm watch:server'",
         "watch:src": "ts-node --esm esbuild.watch.ts",
-        "watch:server": "http-server ./dist -p 1420 -s"
+        "watch:server": "http-server ./dist/development -p 1420 -s"
     },
     "config": {
         "commitizen": {
@@ -34,12 +35,14 @@
         "@types/node": "^18.11.18",
         "@types/react": "^18.0.26",
         "@types/react-dom": "^18.0.10",
+        "@types/rimraf": "^3.0.2",
         "@typescript-eslint/eslint-plugin": "^5.48.2",
         "@typescript-eslint/parser": "^5.48.2",
         "autoprefixer": "^10.4.13",
         "commitizen": "^4.2.6",
         "concurrently": "^7.6.0",
         "esbuild": "^0.15.18",
+        "esbuild-plugin-copy": "^2.0.1",
         "esbuild-sass-plugin": "^2.4.5",
         "eslint": "^8.32.0",
         "eslint-config-prettier": "^8.6.0",
@@ -50,6 +53,7 @@
         "postcss": "^8.4.21",
         "postcss-modules": "^6.0.0",
         "prettier": "^2.8.3",
+        "react-devtools": "^4.27.1",
         "rimraf": "^3.0.2",
         "stylelint": "^14.16.1",
         "stylelint-config-prettier": "^9.0.4",

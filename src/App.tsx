@@ -1,6 +1,14 @@
 import { useState } from "react";
 import { invoke } from "@tauri-apps/api/tauri";
 
+import TestComp from "TestComp.js";
+import scss from "./App.module.scss";
+import classes from "utils/classNames.js";
+
+import viteSvg from "./public/vite.svg";
+import tauriSvg from "./public/tauri.svg";
+import reactSvg from "./public/react.svg";
+
 function App() {
     const [greetMsg, setGreetMsg] = useState("");
     const [name, setName] = useState("");
@@ -11,28 +19,29 @@ function App() {
     }
 
     return (
-        <div className="container">
+        <div className={scss.container}>
+            <TestComp />
             <h1>Welcome to Tauri!</h1>
 
-            <div className="row">
+            <div className={scss.row}>
                 <a href="https://vitejs.dev" target="_blank">
                     <img
-                        src="/public/vite.svg"
-                        className="logo vite"
+                        src={viteSvg}
+                        className={classes(scss.logo, scss.vite)}
                         alt="Vite logo"
                     />
                 </a>
                 <a href="https://tauri.app" target="_blank">
                     <img
-                        src="/public/tauri.svg"
-                        className="logo tauri"
+                        src={tauriSvg}
+                        className={classes(scss.logo, scss.tauri)}
                         alt="Tauri logo"
                     />
                 </a>
                 <a href="https://reactjs.org" target="_blank">
                     <img
-                        src="/public/react.svg"
-                        className="logo react"
+                        src={reactSvg}
+                        className={classes(scss.logo, scss.react)}
                         alt="React logo"
                     />
                 </a>
@@ -40,7 +49,7 @@ function App() {
 
             <p>Click on the Tauri, Vite, and React logos to learn more.</p>
 
-            <div className="row">
+            <div className={classes(scss.row)}>
                 <div>
                     <input
                         id="greet-input"

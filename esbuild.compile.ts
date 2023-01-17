@@ -4,6 +4,8 @@ import config from "./esbuild.js";
 esbuild
     .build({
         ...config,
+        outfile: "./dist/production/bundle.js",
+        minify: true,
     })
     .catch((e) => {
         console.log(e);
