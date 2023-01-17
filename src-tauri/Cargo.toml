@@ -1,5 +1,5 @@
 [package]
-name = "pfsv"
+name = "tauri-ts-react-esbuild-template"
 version = "0.0.0"
 description = "A Tauri App"
 authors = ["you"]

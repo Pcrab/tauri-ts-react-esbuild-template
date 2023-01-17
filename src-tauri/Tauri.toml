@@ -5,7 +5,7 @@ devPath = "http://localhost:1420"
 distDir = "../dist"
 
 [package]
-productName = "pfsv"
+productName = "tauri-ts-react-esbuild-template"
 version = "../package.json"
 
 [tauri.allowlist]
@@ -49,5 +49,5 @@ active = false
 fullscreen = false
 height = 600
 resizable = true
-title = "pfsv"
+title = "tauri-ts-react-esbuild-template"
 width = 800
