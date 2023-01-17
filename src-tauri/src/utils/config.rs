@@ -1,7 +1,4 @@
-use std::{
-    fs,
-    path::PathBuf,
-};
+use std::{fs, path::PathBuf};
 
 use super::constants;
 use chrono::prelude::*;
@@ -25,7 +22,7 @@ impl Config {
             current_version: constants::APP_VERSION.to_string(),
             last_checked: now,
             auto_check_update: true,
-            check_interval: 1440
+            check_interval: 1440,
         }
     }
 
